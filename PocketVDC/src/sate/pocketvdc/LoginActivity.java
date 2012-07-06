@@ -3,7 +3,6 @@ package sate.pocketvdc;
 import java.util.ArrayList;
 import java.util.List;
 
-import test.edge.opengles.R;
 
 import android.content.Intent;
 import android.content.SharedPreferences;

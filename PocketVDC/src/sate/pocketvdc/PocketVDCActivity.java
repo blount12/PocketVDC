@@ -1,6 +1,5 @@
 package sate.pocketvdc;
 
-import test.edge.opengles.R;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
@@ -8,6 +7,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.pm.ConfigurationInfo;
 import android.graphics.Bitmap;
 import android.opengl.GLSurfaceView;
@@ -19,6 +20,7 @@ import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.AdapterView;
@@ -32,9 +34,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.view.MotionEvent;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 
 public class PocketVDCActivity extends Activity
 {
@@ -47,7 +46,7 @@ public class PocketVDCActivity extends Activity
 	final int MENU_BUILD = 5;
 	final int MENU_SETTINGS = 6;
 	int menuStatus = MENU_INVISIBLE;
-	Dialog dialog;
+	Dialog dialog, keepTrackOfSettingDialog;
 	AlertDialog.Builder alertDialog;
 	private static final int GET_IMAGE = 0;
 	private static final int GET_DIALOG = 1;
@@ -159,6 +158,8 @@ public class PocketVDCActivity extends Activity
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
 		final ListView contextMenu = (ListView) findViewById(R.id.listView1);
+		
+		
 		// Handle item selection
 		switch (item.getItemId())
 		{
@@ -170,12 +171,40 @@ public class PocketVDCActivity extends Activity
 				contextMenu.setVisibility(View.INVISIBLE);
 			} else
 			{
+				//handle deeper nested values
+				final OnItemClickListener backAction = new OnItemClickListener()
+				{
+
+					@Override
+					public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3)
+					{
+						if(position == 0)
+						{
+							Toast.makeText(getApplicationContext(), "hey back", Toast.LENGTH_SHORT).show();
+						
+							menuStatus = MENU_INVENTORY;
+							String[] shiftBack = getResources().getStringArray(R.array.inventory);
+							contextMenu.setAdapter(new ArrayAdapter<String>(PocketVDCActivity.this, android.R.layout.simple_list_item_1, shiftBack));
+							contextMenu.setVisibility(View.VISIBLE);
+							
+						   //set listenerback
+							//contextMenu.setOnItemClickListener(backAction);
+							//SEPARATE LISTENER TO HANDLE REGULAR INVENTORY ACTION!
+							
+						   
+						}
+						
+					}
+
+				};
+				
 				menuStatus = MENU_INVENTORY;
 				final String[] inventory = getResources().getStringArray(
 						R.array.inventory);
 				contextMenu.setAdapter(new ArrayAdapter<String>(this,
 						android.R.layout.simple_list_item_1, inventory));
 				contextMenu.setVisibility(View.VISIBLE);
+				
 				contextMenu.setOnItemClickListener(new OnItemClickListener()
 				{
 					@Override
@@ -184,22 +213,36 @@ public class PocketVDCActivity extends Activity
 						selected = (String) contextMenu.getItemAtPosition(position);
 						if (selected.equals(inventory[0]))
 						{
+						
+							
+						
+							
 							String[] my_textures = getResources().getStringArray(
 									R.array.my_textures);
+						
+							
 							contextMenu.setAdapter(new ArrayAdapter<String>(
 									getApplicationContext(), android.R.layout.simple_list_item_1,
 									my_textures));
-						} 
-						else if (selected.equals(inventory[1]))
+							
+						//	contextMenu.setOnItemClickListener(backAction);
+							
+							  
+
+						} else if (selected.equals(inventory[1]))
 						{
+							
+							//ArrayList<String> opensim_textures = new ArrayList<String>(com.wglxy.example.dash1.R.array.opensim_textures);
+							
 							String[] opensim_textures = getResources().getStringArray(
 									R.array.opensim_textures);
 							contextMenu.setAdapter(new ArrayAdapter<String>(
 									getApplicationContext(), android.R.layout.simple_list_item_1,
 									opensim_textures));
-						} 
-						else if (selected.equals(inventory[2]))
+						} else if (selected.equals(inventory[2]))
 						{
+							
+							//ArrayList<String> primitives = new ArrayList<String>(com.wglxy.example.dash1.R.array.primitives);
 							String[] primitives = getResources().getStringArray(
 									R.array.primitives);
 							contextMenu.setAdapter(new ArrayAdapter<String>(
@@ -229,7 +272,7 @@ public class PocketVDCActivity extends Activity
 				contextMenu.setAdapter(new ArrayAdapter<String>(this,
 						android.R.layout.simple_list_item_1, places));
 				contextMenu.setVisibility(View.VISIBLE);
-
+///////////USE SAME METHOD FOR INVENTORY!!!!!!!!!!!!!
 				final OnItemClickListener teleport = new OnItemClickListener()
 				{
 
@@ -247,24 +290,31 @@ public class PocketVDCActivity extends Activity
 					public void onItemClick(AdapterView<?> parent, View view, int position, long id)
 					{
 						String selected = (String) contextMenu.getItemAtPosition(position);
+						
 						if (selected.equals(places[0]))
 						{
+							//ArrayList<String> places_favorites = new ArrayList<String>(com.wglxy.example.dash1.R.array.places_favorites);
+						
 							String[] places_favorites = getResources().getStringArray(
 									R.array.places_favorites);
 							contextMenu.setAdapter(new ArrayAdapter<String>(
 									getApplicationContext(), android.R.layout.simple_list_item_1,
 									places_favorites));
 							contextMenu.setOnItemClickListener(teleport);
-						} else if (selected.equals(places[1]))
+						}
+
+						else if (selected.equals(places[1]))
 						{
+							//ArrayList<String> places_landmarks = new ArrayList<String>(com.wglxy.example.dash1.R.array.places_landmarks);
 							String[] places_landmarks = getResources().getStringArray(
-									R.array.places_landmarks);
+								R.array.places_landmarks);
 							contextMenu.setAdapter(new ArrayAdapter<String>(
 									getApplicationContext(), android.R.layout.simple_list_item_1,
 									places_landmarks));
 							contextMenu.setOnItemClickListener(teleport);
 						} else if (selected.equals(places[2]))
 						{
+							//ArrayList<String> places_teleport_history = new ArrayList<String>(com.wglxy.example.dash1.R.array.places_teleport_history);
 							String[] places_teleport_history = getResources().getStringArray(
 									R.array.places_teleport_history);
 							contextMenu.setAdapter(new ArrayAdapter<String>(
@@ -273,6 +323,8 @@ public class PocketVDCActivity extends Activity
 							contextMenu.setOnItemClickListener(teleport);
 						} else if (selected.equals(places[3]))
 						{
+							
+							//ArrayList<String> places_inventory = new ArrayList<String>(com.wglxy.example.dash1.R.array.places_inventory);
 							String[] places_inventory = getResources().getStringArray(
 									R.array.places_inventory);
 							contextMenu.setAdapter(new ArrayAdapter<String>(
@@ -281,6 +333,7 @@ public class PocketVDCActivity extends Activity
 							contextMenu.setOnItemClickListener(teleport);
 						} else if (selected.equals(places[4]))
 						{
+							//ArrayList<String> places_library = new ArrayList<String>(com.wglxy.example.dash1.R.array.places_library);
 							String[] places_library = getResources().getStringArray(
 									R.array.places_library);
 							contextMenu.setAdapter(new ArrayAdapter<String>(
@@ -288,7 +341,6 @@ public class PocketVDCActivity extends Activity
 									places_library));
 							contextMenu.setOnItemClickListener(teleport);
 						}
-
 					}
 				});
 			}
@@ -303,17 +355,25 @@ public class PocketVDCActivity extends Activity
 			// calling create dialog method.
 			dialog = onCreateDialogImg(GET_DIALOG);
 			dialog.show();
+			
+			
 			return true;
+			
+			
 
 		case R.id.settings:
 			// calling create dialog method for settings dialog
 			dialog = onCreateDialogOptionsWindow(GET_DIALOG);
 			dialog.show();
+			
+			keepTrackOfSettingDialog = dialog;
 			return true;
+			
 			
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+	
 		
 	}
 
@@ -366,12 +426,20 @@ public class PocketVDCActivity extends Activity
 				{
 					if (menuStatus != MENU_INVISIBLE)
 					{
+						
 						contextMenu.setVisibility(View.INVISIBLE);
 						menuStatus = MENU_INVISIBLE;
-					} else
+						
+					}
+						
+						
+						
+					 else
 					{
 						((OnTouchListener) mGLRenderer).onTouch(v, event);
+						
 					}
+					
 					return true;
 				}
 
@@ -435,6 +503,7 @@ public class PocketVDCActivity extends Activity
 				Toast.makeText(getApplicationContext(), "Change Updated...", Toast.LENGTH_SHORT).show();
 				
 			}
+			
 		});
 		
 		//handle changes user makes in world to allow voice.

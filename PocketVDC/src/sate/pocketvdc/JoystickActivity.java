@@ -2,7 +2,6 @@ package sate.pocketvdc;
 
 
 
-import test.edge.opengles.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;

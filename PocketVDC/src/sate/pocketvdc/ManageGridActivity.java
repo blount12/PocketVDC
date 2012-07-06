@@ -2,7 +2,6 @@ package sate.pocketvdc;
 
 import java.util.List;
 
-import test.edge.opengles.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;

@@ -13,7 +13,6 @@ import java.nio.channels.ReadableByteChannel;
 import java.util.ArrayList;
 import java.util.List;
 
-import test.edge.opengles.R;
 
 import android.content.Context;
 import android.os.Parcel;

@@ -15,7 +15,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
-import test.edge.opengles.R;
 
 import android.app.Activity;
 import android.content.Context;

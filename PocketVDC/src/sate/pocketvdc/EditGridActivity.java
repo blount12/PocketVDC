@@ -1,6 +1,5 @@
 package sate.pocketvdc;
 
-import test.edge.opengles.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
