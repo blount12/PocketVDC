@@ -11,7 +11,7 @@ public class Vector3d
 	{
 		x = y = z = 0.0f;
 	}
-	
+	//more comments!!
 	public Vector3d(float x, float y, float z){
 		this.x = x;
 		this.y = y;
