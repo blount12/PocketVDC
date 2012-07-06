@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/TitleBar" >
+
+        <ImageButton
+            style="@style/TitleBarAction"
+            android:contentDescription="@string/description_home"
+            android:onClick="onClickHome"
+            android:src="@drawable/title_home" />
+
+        <ImageView
+            style="@style/TitleBarSeparator"
+            android:contentDescription="@string/description_title_bar_separator" />
+
+        <TextView style="@style/TitleBarText" />
+
+        <ImageButton
+            style="@style/TitleBarAction"
+            android:contentDescription="@string/description_about"
+            android:onClick="onClickAbout"
+            android:src="@drawable/title_about" />
+
+        <ImageButton
+            style="@style/TitleBarAction"
+            android:contentDescription="@string/description_search"
+            android:onClick="onClickSearch"
+            android:src="@drawable/title_search" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/gridNickNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/grid_nickname_title" />
+
+            <EditText
+                android:id="@+id/gridNickNameTextBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text" >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView
+                android:id="@+id/gridNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/grid_name_title" />
+
+            <EditText
+                android:id="@+id/gridNameTextBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/firstNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/first_name_title" />
+
+            <EditText
+                android:id="@+id/firstNameTextBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/lastNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/last_name_title" />
+
+            <EditText
+                android:id="@+id/lastNameTextBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/passwordLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password_title" />
+
+            <EditText
+                android:id="@+id/passwordTextBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/loginURILabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_uri_title" />
+
+            <EditText
+                android:id="@+id/loginURITextBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/getGridInfoButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/get_grid_info_button" />
+
+                <Button
+                    android:id="@+id/clearInfoButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clear_info_button" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            
+      <!--  <Space
+        	android: only compatible with 4.0 ice cream sandwich
+        	</Space>
+            -->
+            <TextView
+                android:id="@+id/loginPageLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_page_title" />
+
+            <AutoCompleteTextView
+                android:id="@+id/loginPageTextBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="@string/login_page_autocomplete" />
+
+            <TextView
+                android:id="@+id/helperURLLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/helper_url_title" />
+
+            <AutoCompleteTextView
+                android:id="@+id/helperURLTextBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="@string/helper_url_autocomplete" />
+
+            <TextView
+                android:id="@+id/websiteLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/website_title" />
+
+            <AutoCompleteTextView
+                android:id="@+id/websiteTextBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="@string/website_autocomplete" />
+
+            <TextView
+                android:id="@+id/supportLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/support_title" />
+
+            <AutoCompleteTextView
+                android:id="@+id/supportTextBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="@string/support_autocomplete" />
+
+            <TextView
+                android:id="@+id/accountLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/account_title" />
+
+            <AutoCompleteTextView
+                android:id="@+id/accountTextBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="@string/account_autocomplete" />
+
+            <TextView
+                android:id="@+id/passwordLabel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password_title2" />
+
+            <AutoCompleteTextView
+                android:id="@+id/passwordTextBox2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="@string/password_autocomplete" />
+
+            <TextView
+                android:id="@+id/webSearchLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/web_search_title" />
+
+            <AutoCompleteTextView
+                android:id="@+id/webSearchTextBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="@string/web_search_autocomplete" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/addButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_button" />
+
+                <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel_button" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/inventory"
+        android:showAsAction="ifRoom"
+        android:title="Inventory"/>
+    <item
+        android:id="@+id/world"
+        android:showAsAction="ifRoom"
+        android:title="World">
+        <menu>
+            <item
+                android:id="@+id/map"
+                android:title="Map"/>
+            <item
+                android:id="@+id/places"
+                android:title="Places"/>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/people"
+        android:showAsAction="ifRoom"
+        android:title="People"/>
+    <item
+        android:id="@+id/build"
+        android:showAsAction="ifRoom"
+        android:title="Build"/>
+    <item
+        android:id="@+id/upload"
+        android:showAsAction="ifRoom"
+        android:title="Upload"/>
+    <item
+        android:id="@+id/settings"
+        android:title="Settings"/>
+
+</menu>

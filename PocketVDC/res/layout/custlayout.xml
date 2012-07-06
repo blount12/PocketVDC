@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/layout_root"
+              android:orientation="horizontal"
+              android:layout_width="fill_parent"
+              android:layout_height="100dp"
+              android:gravity="center"
+              android:padding="10dp"
+              
+              >
+
+    	<ImageButton
+        	android:id="@+id/sdImageButton"
+        	android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:src="@drawable/sdcard" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="165dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/uploadText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/upload_text"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </LinearLayout>
+
+			 <ImageButton
+			     android:id="@+id/deviceImageButton"
+			     android:layout_width="wrap_content"
+			     android:layout_height="wrap_content"
+			     android:padding="10dp"
+			     android:src="@drawable/hardwarephone" />
+			
+
+
+			 <TextView
+			     android:id="@+id/text"
+			     android:layout_width="wrap_content"
+			     android:layout_height="fill_parent"
+			     android:textColor="#FFF" />
+
+			 <TextView
+			     android:id="@+id/textView1"
+			     android:layout_width="wrap_content"
+			     android:layout_height="452dp"
+			     android:text="" />
+
+</LinearLayout>

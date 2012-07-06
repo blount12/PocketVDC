@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_button" />
+   
+    
+    <TextView
+        android:id="@+id/imageWidth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/width_title" 
+     />
+        <TextView
+        android:id="@+id/imageHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/height_title" 
+      />
+        
+     <TextView
+         android:id="@+id/imageDensity"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/density_title"
+         />
+     <Button
+        android:id="@+id/uploadButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/upload_title" />
+    
+    <ImageView
+        android:id="@+id/select"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:contentDescription="@string/desc"
+         />
+     
+   
+    
+</LinearLayout>

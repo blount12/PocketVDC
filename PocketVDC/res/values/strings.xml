@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="hello">Choose one of the features below.</string>
+
+    <string name="app_name">Pocket VDC</string>
+    <string name="description_logo">Virtual</string>
+
+    <string name="description_about">About</string>
+    <string name="description_home">Home</string>
+    <string name="description_search">Search</string>
+    <string name="description_title_bar_separator"></string>
+   
+    <string name="title_about">About</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_feature1">Login</string>
+    <string name="title_feature2">Manage Grids</string>
+    <string name="title_feature3">Exit</string>
+    <string name="title_feature4">Settings</string>
+    
+    <string name="add_title">Add a Grid</string>
+    <string name="default_intro">This is the default content view for an activity. Be sure to change your activity\'s onCreate method. Use setContentView on a custom layout.</string>
+    <string name="feature1_intro">Feature 1 content goes here.</string>
+    <string name="feature2_intro">Feature 2 content goes here.</string>
+    <string name="feature3_intro">Feature 3 content goes here.</string>
+    <string name="feature4_intro">Feature 4 content goes here.</string>
+  
+	
+	
+	
+	
+    <string name="about_intro">\
+    This application brings the use of the virtual world to the tablet like
+    never before! It allows the user access a given region and 
+    have meetings, conferences, voice chat, build simple prims, and adjust 
+    certain settings.\n
+    \n
+    Contributing members from team PocketVDC are:\n\n
+    
+    James West\n
+    Justin Edse\n
+    Jordan Komnick\n
+    Aaron Baker\n
+    Sarahann Blount\n\n
+    
+   
+    
+     </string>
+    <string name="search_intro">Content for the Search page goes here.</string>
+    
+     <!-- the array of regions will be filled by some code to allow for adding/removing regions -->
+    <string-array name="regions_array">
+        <item>My Home</item>
+        <item>My Last Location</item>
+        <item>Region 1</item>
+        <item>Region 2</item>
+        <item>Region 3</item>
+    </string-array>
+    
+     <string-array name="grids_array">
+        <item>Grid1</item>
+        <item>Grid2</item>
+        <item>Grid3</item>
+        <item>Grid4</item>
+    </string-array>
+    
+    
+    <string name="grid_title">Choose a grid</string>
+    <string name="region_title">Choose a region</string>
+    <string name="edit_title">Edit a grid</string>
+    <string name="unable_to_get">Sorry, there was a problem retrieving your grid data. Please try again.</string>
+    
+    <!-- AddGridActivity and EditGridActivity and LoginActivity and ManageGridActivity
+    I lumped these together because they share a lot of the same basic text fields and should be kept consistent-->
+    <!-- Autocomplete strings are blank right now because I'm not sure what they should be 
+    or if they should even be not blank before the autocomplete info is accessed from the server -->
+    <string name="grid_nickname_title">Grid Nickname</string>
+    <string name="grid_name_title">Grid Name</string>
+    <string name="first_name_title">First Name</string>
+    <string name="last_name_title">Last Name</string>
+    <string name="password_title">Password</string>
+    <string name="login_uri_title">Login URI</string>
+    <string name="get_grid_info_button">Get Grid Info</string>
+    <string name="clear_info_button">Clear Info</string>
+    <string name="login_page_title">Login Page</string>
+    <string name="login_page_autocomplete"></string>
+    <string name="helper_url_title">Helper URL</string>
+    <string name="helper_url_autocomplete"></string>
+    <string name="website_title">Website</string>
+    <string name="website_autocomplete"></string>
+    <string name="support_title">Support</string>
+    <string name="support_autocomplete"></string>
+    <string name="account_title">Account</string>
+    <string name="account_autocomplete"></string>
+    <string name="password_title2">Password</string>
+    <string name="password_autocomplete"></string>
+    <string name="web_search_title">Web Search</string>
+    <string name="web_search_autocomplete"></string>
+    <string name="add_button">Add</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="save_button">Save</string>
+    <string name="name_title">Name</string>
+    <string name="submit_button">Submit</string>
+    <string name="add_grid_button">Add Grid</string>
+    <string name="builder_Title">Select Edit or Delete</string>
+    <string name="width_title">Width</string>
+	<string name="height_title">Height</string>
+	<string name="density_title">Density</string>
+	<string name="upload_title">Upload</string>
+	<string name="upload_image">Upload an Image</string>
+	<string name="start_button">Touch Me</string>
+	<string name="desc">Image Display</string>
+	<string name="upload_text">Upload an Image From the Gallery</string>
+	<string name="title">Choose an Image</string>
+	
+    <string-array name="inventory">
+        <item>My Textures</item>
+        <item>OpenSim Textures</item>
+        <item>Primitives</item>
+    </string-array>
+    <string-array name="my_textures">
+    	<item>Back</item>
+        <item>Texture 1</item>
+        <item>Texture 2</item>
+        <item>Texture 3</item>
+    </string-array>
+    <string-array name="opensim_textures">
+        <item>Brick Texture</item>
+        <item>Wood Texture</item>
+    </string-array>
+    <string-array name="primitives">
+        <item>Prim 1</item>
+        <item>Prim 2</item>
+        <item>Prim 3</item>
+        <item>Prim 4</item>
+    </string-array>
+    <string-array name="places">
+        <item>Favorites</item>
+        <item>Landmarks</item>
+        <item>Teleport History</item>
+        <item>Inventory</item>
+        <item>Library</item>
+    </string-array>
+    <string-array name="places_favorites">
+        
+        <item>Favorite 1</item>
+        <item>Favorite 2</item>
+        <item>Favorite 3</item>
+        <item>Favorite 4</item>
+    </string-array>
+    <string-array name="places_landmarks">
+        <item>Landmark 1</item>
+        <item>Landmark 2</item>
+        <item>Landmark 3</item>
+        <item>Landmark 4</item>
+    </string-array>
+    <string-array name="places_teleport_history">
+        <item>Teleport 1</item>
+        <item>Teleport 2</item>
+        <item>Teleport 3</item>
+        <item>Teleport 4</item>
+    </string-array>
+    <string-array name="places_inventory">
+        <item>Inventory 1</item>
+        <item>Inventory 2</item>
+        <item>Inventory 3</item>
+        <item>Inventory 4</item>
+    </string-array>
+    <string-array name="places_library">
+        <item>Place 1</item>
+        <item>Place 2</item>
+        <item>Place 3</item>
+        <item>Place 4</item>
+    </string-array>
+    
+     <string name="blank"></string>
+   
+    <!-- Preferences -->
+     <string name="save_name_password_summary">Store your username and password</string>
+    <string name="save_name_password_title">Remember me</string>
+    <string name="hints_summary">Offer hints inworld</string>
+    <string name="hints_title">Hints</string>
+    <string name="allow_voice_summary">Allow voice chat inworld</string>
+    <string name="allow_voice_title">Allow voice</string>
+    <string name="fonts_summary">Click to pop up a list to choose from</string>
+    <string name="fonts_title">Select font type for inworld</string>
+    <string name="fonts_dialog_title">Choose a font type</string>
+    <string name="ip_address_summary">Enter IP address for proxy</string>
+    <string name="ip_address_title">IP address</string>
+    <string name="ip_address_dialog_title">Enter IP address</string>
+    <string name="port_number_summary">Enter port number for proxy</string>
+    <string name="port_number_title">Port number</string>
+    <string name="port_number_dialog_title">Enter port number</string>
+    <string name="options_title">In World Options</string>
+    <string name="voice_text">Allow Voice Option</string>
+    <string name="hints_text">Hints Option</string>
+    
+    
+
+</resources>
