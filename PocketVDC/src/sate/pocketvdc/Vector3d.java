@@ -13,7 +13,7 @@ public class Vector3d
 	}
 	
 	/**
-	 * 
+	 * Constructor
 	 * @param x
 	 * @param y
 	 * @param z
