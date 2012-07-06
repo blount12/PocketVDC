@@ -33,6 +33,8 @@ public class Vector3d
 		
 		return result;
 	}
+	
+	
 	public Vector3d subtract(Vector3d v)
 	{
 		Vector3d result = new Vector3d();
@@ -63,6 +65,11 @@ public class Vector3d
 		return result;
 	}
 	
+	/**
+	 * 
+	 * @param vVector
+	 * @return dot product between this and vVector
+	 */
 	public float dot(Vector3d vVector)
 	{
 		float result;
