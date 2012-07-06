@@ -12,6 +12,12 @@ public class Vector3d
 		x = y = z = 0.0f;
 	}
 	
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 */
 	public Vector3d(float x, float y, float z){
 		this.x = x;
 		this.y = y;
