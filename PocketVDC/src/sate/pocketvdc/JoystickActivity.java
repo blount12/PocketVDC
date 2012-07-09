@@ -24,7 +24,7 @@ public class JoystickActivity extends Activity
       public void run() {
         TextView textView = (TextView)findViewById(R.id.textView1);
         Joystick js = (Joystick)findViewById(R.id.joystick1);
-        textView.setText("F: " + js.goingForward() + " B: " + js.goingBack() + " L: " + js.goingLeft() + " R: " + js.goingRight());
+        textView.setText("F: " + js.isUp() + " B: " + js.isDown() + " L: " + js.isLeft() + " R: " + js.isRight());
         mHandler.postDelayed(mUpdateTextView, 100);
       }
     };

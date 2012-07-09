@@ -1106,5 +1106,11 @@ public class PocketVDCRenderer implements Renderer, OnTouchListener
 		}
 		return this.oldDist;
 	}
+	
+	
+	public void joystickControls()
+	{
+		//joystick stuff
+	}
 
 }
