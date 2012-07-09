@@ -10,6 +10,8 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -43,6 +45,23 @@ public class LoginActivity extends DashboardActivity {
 	private static final String USERNAME_PREF = "username";
 	private static final String PASS_PREF = "password";
 	private String encryptedUserName, encryptedPassword;
+	
+	// creates the menu on the action bar
+		/**
+		 * This method creates the action bar at the top of the virtual world. It
+		 * makes use of the XML layout in the Menu folder in the project directory.
+		 * 
+		 * @param menu
+		 *            : The type of parameter the is passed in during the creation
+		 *            of the menu itself.
+		 */
+		@Override
+		public boolean onCreateOptionsMenu(Menu menu)
+		{
+			MenuInflater inflater = getMenuInflater();
+			inflater.inflate(R.menu.home_screen_menu, menu);
+			return true;
+		}
 
 	/**
 	 * onCreate: This method is ran when the activity starts up. It builds

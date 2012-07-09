@@ -5,32 +5,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
-    <LinearLayout style="@style/TitleBar" >
-
-        <ImageButton
-            style="@style/TitleBarAction"
-            android:contentDescription="@string/description_home"
-            android:onClick="onClickHome"
-            android:src="@drawable/title_home" />
-
-        <ImageView style="@style/TitleBarSeparator"
-            android:contentDescription="@string/description_title_bar_separator" />
-
-        <TextView style="@style/TitleBarText" />
-
-        <ImageButton
-            style="@style/TitleBarAction"
-            android:contentDescription="@string/description_about"
-            android:onClick="onClickAbout"
-            android:src="@drawable/title_about" />
-
-        <ImageButton
-            style="@style/TitleBarAction"
-            android:contentDescription="@string/description_search"
-            android:onClick="onClickSearch"
-            android:src="@drawable/title_search" />
-    </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

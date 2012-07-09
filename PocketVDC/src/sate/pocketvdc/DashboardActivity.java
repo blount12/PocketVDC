@@ -183,14 +183,14 @@ public abstract class DashboardActivity extends Activity
 			startActivity(new Intent(getApplicationContext(),
 					ManageGridActivity.class));
 			break;
-		case R.id.home_btn_feature3:
-			this.finish();
-			break;
-		case R.id.home_btn_feature4:
-			startActivity(new Intent(getApplicationContext(),
-					PrefsActivity.class));
-
-			break;
+//		case R.id.home_btn_feature3:
+//			this.finish();
+//			break;
+//		case R.id.home_btn_feature4:
+//			startActivity(new Intent(getApplicationContext(),
+//					PrefsActivity.class));
+//
+//			break;
 		default:
 			break;
 		}

@@ -18,6 +18,8 @@ package sate.pocketvdc;
 
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 
 /**
  * This is the About activity in the dashboard application.
@@ -27,6 +29,13 @@ import android.os.Bundle;
 
 public class AboutActivity extends DashboardActivity 
 {
+	//create action bar menu
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.home_screen_menu, menu);
+		return true;
+	}
 
 /**
  * onCreate

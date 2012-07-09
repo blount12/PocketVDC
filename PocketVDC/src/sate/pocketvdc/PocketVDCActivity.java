@@ -149,7 +149,7 @@ public class PocketVDCActivity extends Activity
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.action_bar_menu, menu);
+		inflater.inflate(R.menu.main_world_menu, menu);
 		return true;
 	}
 

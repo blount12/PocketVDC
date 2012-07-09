@@ -3,12 +3,14 @@ package sate.pocketvdc;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class AddGridActivity extends DashboardActivity 
+public class AddGridActivity extends DashboardActivity
 {
 
 	/**
@@ -16,9 +18,17 @@ public class AddGridActivity extends DashboardActivity
 	 */
 	private static final String INSTANTIATION_VALUE = "dummyVal";
 	private static final String BACK_TO_MNGGRID = "Added a Grid";
-	
+
+	// create action bar menu
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.home_screen_menu, menu);
+		return true;
+	}
+
 	@Override
-	public void onCreate(Bundle savedInstanceState) 
+	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.add_grid);
@@ -56,7 +66,7 @@ public class AddGridActivity extends DashboardActivity
 		 * all the correct information is filled in a grid is added to the
 		 * internal storage and the list on the previous page is updated.
 		 */
-		getInfo.setOnClickListener(new View.OnClickListener() 
+		getInfo.setOnClickListener(new View.OnClickListener()
 		{
 			public void onClick(View view)
 			{
@@ -65,7 +75,7 @@ public class AddGridActivity extends DashboardActivity
 						&& firstName.getText().toString().length() > 0
 						&& lastName.getText().toString().length() > 0
 						&& password.getText().toString().length() > 0
-						&& loginURI.getText().toString().length() > 0) 
+						&& loginURI.getText().toString().length() > 0)
 				{
 					Toast.makeText(
 							getApplicationContext(),
@@ -78,12 +88,11 @@ public class AddGridActivity extends DashboardActivity
 					// TRY/CATCH FOR CONNECT TO SERVER?
 					// DO I HAVE TO CHECK CONNECTION TO SERVER JUST IN
 					// CASE????????
-				} 
-				else
+				} else
 				{
 					Toast.makeText(getApplicationContext(),
-							"Sorry, you have to complete all the fields",
-							Toast.LENGTH_SHORT).show();
+							"Sorry, you have to complete all the fields", Toast.LENGTH_SHORT)
+							.show();
 				}
 			}
 		});
@@ -92,9 +101,9 @@ public class AddGridActivity extends DashboardActivity
 		 * The clearInfo setOnClickListener method handles the clearing of text
 		 * boxes upon user request.
 		 */
-		clearInfo.setOnClickListener(new View.OnClickListener() 
+		clearInfo.setOnClickListener(new View.OnClickListener()
 		{
-			public void onClick(View view) 
+			public void onClick(View view)
 			{
 				Intent cancelBackToManageGrid = new Intent();
 				setResult(RESULT_OK, cancelBackToManageGrid);
@@ -117,7 +126,7 @@ public class AddGridActivity extends DashboardActivity
 		 */
 		myAdd.setOnClickListener(new View.OnClickListener()
 		{
-			public void onClick(View view) 
+			public void onClick(View view)
 			{
 
 				/*
@@ -127,8 +136,9 @@ public class AddGridActivity extends DashboardActivity
 				 * the listView dynamically.
 				 */
 				// using dummy val for instantiation.....
-				Grid myNewGrid = new Grid(INSTANTIATION_VALUE, INSTANTIATION_VALUE, INSTANTIATION_VALUE,
-						INSTANTIATION_VALUE,INSTANTIATION_VALUE, INSTANTIATION_VALUE);
+				Grid myNewGrid = new Grid(INSTANTIATION_VALUE, INSTANTIATION_VALUE,
+						INSTANTIATION_VALUE, INSTANTIATION_VALUE, INSTANTIATION_VALUE,
+						INSTANTIATION_VALUE);
 
 				myNewGrid.setGridNickName(gridNickName.getText().toString());
 				myNewGrid.setGridName(gridName.getText().toString());
@@ -155,7 +165,7 @@ public class AddGridActivity extends DashboardActivity
 		 * the cancel button. This exits the current screen and goes back to the
 		 * previous one.
 		 */
-		cancelButton.setOnClickListener(new View.OnClickListener() 
+		cancelButton.setOnClickListener(new View.OnClickListener()
 		{
 			public void onClick(View view)
 			{
@@ -177,7 +187,7 @@ public class AddGridActivity extends DashboardActivity
 	 * @return This returns a new grid complete with the newly entered
 	 *         information.
 	 */
-	static Grid NewGrid(Grid myGrid) 
+	static Grid NewGrid(Grid myGrid)
 	{
 		return myGrid;
 	}
