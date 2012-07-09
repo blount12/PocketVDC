@@ -100,7 +100,6 @@ public class PocketVDCRenderer implements Renderer, OnTouchListener
 	
 	/** Store our model data in a float buffer. */
 	
-	
 	/** This will be used to pass in the modelview matrix. */
 	private int mMVMatrixHandle;
 	
