@@ -4,21 +4,21 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="horizontal" >
-
-            <Button
-                android:id="@+id/home_btn_feature1"
-                style="@style/HomeButton"
-                android:drawableTop="@drawable/6-social-forward"
-                android:onClick="onLoginClick"
-                android:text="@string/title_feature1"
-                android:textSize="@dimen/text_size_large" />
-
-            <Button
-                android:id="@+id/home_btn_feature2"
-                style="@style/HomeButton"
-                android:drawableTop="@drawable/7-location-map"
-                android:onClick="onManageClick"
-                android:text="@string/title_feature2"
-                android:textSize="@dimen/text_size_large" />
 
-        </LinearLayout>
+    <Button
+        android:id="@+id/home_btn_feature1"
+        style="@style/HomeButton"
+        android:drawableTop="@drawable/6-social-forward"
+        android:onClick="onLoginClick"
+        android:text="@string/title_feature1"
+        android:textSize="@dimen/text_size_large" />
+
+    <Button
+        android:id="@+id/home_btn_feature2"
+        style="@style/HomeButton"
+        android:drawableTop="@drawable/7-location-map"
+        android:onClick="onManageClick"
+        android:text="@string/title_feature2"
+        android:textSize="@dimen/text_size_large" />
+
+</LinearLayout>

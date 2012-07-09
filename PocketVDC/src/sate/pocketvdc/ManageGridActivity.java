@@ -37,6 +37,7 @@ public class ManageGridActivity extends Activity
 	private static final String GET_BACK_OBJECT = "back";
 	private static final String ADDED_A_GRID = "Added a Grid";
 	private static final String CASE_TO_EDIT = "grid";
+	ArrayAdapter<Grid> myListAdapter;
 
 	// creates the menu on the action bar
 	/**
@@ -76,7 +77,7 @@ public class ManageGridActivity extends Activity
 
 		listView = (ListView) findViewById(R.id.listView2);
 		listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-		final ArrayAdapter<Grid> myListAdapter = new ArrayAdapter<Grid>(this,
+		myListAdapter = new ArrayAdapter<Grid>(this,
 				android.R.layout.simple_list_item_1, android.R.id.text1, this.grids);
 
 		listView.setAdapter(myListAdapter);
@@ -133,18 +134,7 @@ public class ManageGridActivity extends Activity
 
 							break;
 						case 1:
-							// update the list view and array list now
-							// that the user had edited their data grid.
-							// remove original, update with newest.
-							grids.remove(selectedGrid);
-							((BaseAdapter) listView.getAdapter()).notifyDataSetChanged();
-
-							myListAdapter.notifyDataSetChanged();
-
-							// call method write grids to write a text
-							// file to internal!
-							Grid.writeGrids(grids, ManageGridActivity.this);
-
+							onCreateDialog().show();
 							dialog.dismiss();
 
 							break;
@@ -221,5 +211,39 @@ public class ManageGridActivity extends Activity
 
 			Grid.writeGrids(this.grids, this);
 		}
+	}
+	
+	protected Dialog onCreateDialog()
+	{
+		Dialog dialog;
+			final AlertDialog.Builder deleteBuilder = new AlertDialog.Builder(this);
+			deleteBuilder.setMessage("Are you sure you want to delete this grid?");
+			deleteBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener()
+			{
+				public void onClick(DialogInterface dialog, int id)
+				{
+					dialog.dismiss();
+					// update the list view and array list now
+					// that the user had edited their data grid.
+					// remove original, update with newest.
+					grids.remove(selectedGrid);
+					((BaseAdapter) listView.getAdapter()).notifyDataSetChanged();
+
+					myListAdapter.notifyDataSetChanged();
+
+					// call method write grids to write a text
+					// file to internal!
+					Grid.writeGrids(grids, ManageGridActivity.this);
+				}
+			});
+			deleteBuilder.setNegativeButton("No", new DialogInterface.OnClickListener()
+			{
+				public void onClick(DialogInterface dialog, int id)
+				{
+					dialog.cancel();
+				}
+			});
+			dialog = deleteBuilder.create();
+		return dialog;
 	}
 } // end class
