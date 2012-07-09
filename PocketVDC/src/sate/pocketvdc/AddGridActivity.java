@@ -39,7 +39,6 @@ public class AddGridActivity extends Activity
 		Button getInfo = (Button) findViewById(R.id.getGridInfoButton);
 		Button clearInfo = (Button) findViewById(R.id.clearInfoButton);
 		Button myAdd = (Button) findViewById(R.id.addButton);
-		Button cancelButton = (Button) findViewById(R.id.cancelButton);
 		final EditText gridNickName = (EditText) findViewById(R.id.gridNickNameTextBox);
 		final EditText gridName = (EditText) findViewById(R.id.gridNameTextBox);
 		final EditText firstName = (EditText) findViewById(R.id.firstNameTextBox);
@@ -160,21 +159,7 @@ public class AddGridActivity extends Activity
 			}
 		});
 
-		/**
-		 * The cancelButton setOnClickListener handles the user click event for
-		 * the cancel button. This exits the current screen and goes back to the
-		 * previous one.
-		 */
-		cancelButton.setOnClickListener(new View.OnClickListener()
-		{
-			public void onClick(View view)
-			{
-				Intent cancelBackToManageGrid = new Intent();
-				setResult(RESULT_OK, cancelBackToManageGrid);
-
-				finish();
-			}
-		});
+		
 	}
 
 	/**

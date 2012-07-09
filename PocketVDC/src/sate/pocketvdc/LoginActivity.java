@@ -119,7 +119,6 @@ public class LoginActivity extends Activity {
 		}
 
 		Button submitButton = (Button) findViewById(R.id.submitButton);
-		Button cancelButton = (Button) findViewById(R.id.cancelButton);
 
 		// getting arrays from strings file
 		regions = getResources().getStringArray(R.array.regions_array);
@@ -258,16 +257,6 @@ public class LoginActivity extends Activity {
 			@Override
 			public void onNothingSelected(AdapterView<?> arg0) {
 				// TODO Auto-generated method stub
-			}
-		});
-
-		cancelButton.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View view) {
-				Intent changeAdd = new Intent();
-				setResult(RESULT_OK, changeAdd);
-				// cancelled and went back to home screen
-
-				finish();
 			}
 		});
 

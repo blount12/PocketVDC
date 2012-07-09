@@ -35,7 +35,6 @@ public class EditGridActivity extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.edit_grid);
 		Button saveButton = (Button) findViewById(R.id.saveButton);
-		Button cancelButton = (Button) findViewById(R.id.cancelButton);
 		final EditText gridNickName = (EditText) findViewById(R.id.gridNickNameTextBox);
 		final EditText gridName = (EditText) findViewById(R.id.gridNameTextBox);
 		final EditText firstName = (EditText) findViewById(R.id.firstNameTextBox);
@@ -50,21 +49,6 @@ public class EditGridActivity extends Activity
 		password.setText(selectedGrid.getPassword());
 		loginURI.setText(selectedGrid.getLoginURI());
 
-		/**
-		 * The cancelButton setOnClickListener handles the cancelButton click.
-		 * The user is sent to the previous screen.
-		 */
-		cancelButton.setOnClickListener(new View.OnClickListener()
-		{
-			public void onClick(View view)
-			{
-				Intent changeAdd = new Intent();
-				setResult(RESULT_CANCELED, changeAdd);
-				// cancelled and went back to home screen
-
-				finish();
-			}
-		});
 
 		/**
 		 * After making sure there is actually text in the texboxes, the new
