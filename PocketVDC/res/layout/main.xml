@@ -9,46 +9,83 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:gravity="bottom" >
 
         <sate.pocketvdc.Joystick
-            android:id="@+id/joystick1"
-            android:layout_width="200dp"
+            android:id="@+id/joystick"
             android:layout_height="200dp"
+            android:layout_width="200dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_margin="0dp" 
-            android:alpha="0.8"			/>
-
+            android:layout_margin="0dp"
+            android:alpha="0.8" />
+
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/flyDownButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:alpha="0.8"
             android:background="@drawable/fly_down_button"
+            android:contentDescription="@string/blank"
             android:src="@drawable/fly_down_button" />
 
+        <EditText
+            android:id="@+id/chatBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/enterButton"
+            android:layout_toRightOf="@+id/joystick"
+            android:ems="10"
+            android:gravity="center_vertical|bottom"
+            android:inputType="textMultiLine"
+            android:visibility="invisible" >
+
+        </EditText>
+
+        <ListView
+            android:id="@+id/menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/joystick"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/joystick"
+            android:visibility="invisible" >
+        </ListView>
+
+        <ImageView
+            android:id="@+id/select"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/desc" />
+
         <ImageButton
-            android:id="@+id/imageButton1"
+            android:id="@+id/flyUpButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/imageButton2"
+            android:layout_above="@+id/flyDownButton"
             android:layout_alignParentRight="true"
             android:alpha="0.8"
             android:background="@drawable/fly_up_button"
+            android:contentDescription="@string/blank"
             android:src="@drawable/fly_up_button" />
 
         <ToggleButton
-            android:id="@+id/toggleButton1"
+            android:id="@+id/micButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/imageButton1"
-            android:layout_alignTop="@+id/imageButton1"
-            android:layout_toLeftOf="@+id/imageButton1"
+            android:layout_alignTop="@+id/flyUpButton"
+            android:layout_toLeftOf="@+id/flyUpButton"
             android:alpha="0.8"
             android:background="@drawable/mic_button"
             android:text="@string/blank"
@@ -56,43 +93,25 @@
             android:textOn="@string/blank" />
 
         <ToggleButton
-            android:id="@+id/toggleButton2"
+            android:id="@+id/chatButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignTop="@+id/imageButton2"
-            android:layout_toLeftOf="@+id/imageButton2"
+            android:layout_below="@+id/flyUpButton"
+            android:layout_toLeftOf="@+id/flyDownButton"
             android:alpha="0.8"
             android:background="@drawable/chat_button"
             android:textOff="@string/blank"
             android:textOn="@string/blank" />
 
-
-
-
-        <ListView
-            android:id="@+id/listView1"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/enterButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/joystick1"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignRight="@+id/joystick1"
-            android:visibility="invisible" >
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/chatButton"
+            android:text="@string/enter"
+            android:visibility="invisible" />
 
-        </ListView>
+    </RelativeLayout>
 
-<LinearLayout 
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
-    
-    <ImageView
-        android:id="@+id/select"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/desc"
-         />
-   </LinearLayout> 
- </RelativeLayout>
 </FrameLayout>
