@@ -1,8 +1,12 @@
 package sate.pocketvdc;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 
 /**
  * This is a simple activity that demonstrates the dashboard user interface
@@ -10,7 +14,7 @@ import android.view.MenuInflater;
  * 
  */
 
-public class HomeActivity extends DashboardActivity
+public class HomeActivity extends Activity
 {
 
 	// create action bar menu
@@ -20,6 +24,25 @@ public class HomeActivity extends DashboardActivity
 		inflater.inflate(R.menu.home_screen_menu, menu);
 		return true;
 	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		// Handle item selection
+		switch (item.getItemId())
+		{
+		case R.id.about:
+			startActivity(new Intent(getApplicationContext(),
+					AboutActivity.class));
+			return true;
+		case R.id.settings:
+			startActivity(new Intent(getApplicationContext(),
+					PrefsActivity.class));
+			return true;
+			default:
+				return true;
+		}
+		}
 
 	/**
 	 * onCreate - called when the activity is first created. Called when the
@@ -36,6 +59,18 @@ public class HomeActivity extends DashboardActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
+	}
+	
+	public void onLoginClick(View v)
+	{
+		startActivity(new Intent(getApplicationContext(),
+				LoginActivity.class));
+	}
+	
+	public void onManageClick(View v)
+	{
+		startActivity(new Intent(getApplicationContext(),
+				ManageGridActivity.class));
 	}
 
 	/**

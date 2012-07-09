@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class EditGridActivity extends DashboardActivity
+public class EditGridActivity extends Activity
 {
 	// create action bar menu
 	public boolean onCreateOptionsMenu(Menu menu)

@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class AddGridActivity extends DashboardActivity
+public class AddGridActivity extends Activity
 {
 
 	/**

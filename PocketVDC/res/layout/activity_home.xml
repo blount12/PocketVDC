@@ -3,35 +3,19 @@
     android:id="@+id/db1_root"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:padding="6dip" >
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
+    android:orientation="horizontal" >
 
             <Button
                 android:id="@+id/home_btn_feature1"
                 style="@style/HomeButton"
                 android:drawableTop="@drawable/social_forward"
-                android:onClick="onClickFeature"
+                android:onClick="onLoginClick"
                 android:text="@string/title_feature1" />
 
             <Button
                 android:id="@+id/home_btn_feature2"
                 style="@style/HomeButton"
                 android:drawableTop="@drawable/manage_grids"
-                android:onClick="onClickFeature"
+                android:onClick="onManageClick"
                 android:text="@string/title_feature2" />
         </LinearLayout>
-    </LinearLayout>
-
-</LinearLayout>

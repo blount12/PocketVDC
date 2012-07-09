@@ -22,7 +22,7 @@ import android.widget.Toast;
 
 //save in application specific space....
 
-public class ManageGridActivity extends DashboardActivity
+public class ManageGridActivity extends Activity
 {
 
 	private List<Grid> grids = null;
@@ -64,7 +64,6 @@ public class ManageGridActivity extends DashboardActivity
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_manage_grid);
-		setTitleFromActivityLabel(R.id.title_text);
 
 		try
 		{

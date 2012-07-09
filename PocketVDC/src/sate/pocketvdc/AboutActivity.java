@@ -17,6 +17,7 @@
 package sate.pocketvdc;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,7 +28,7 @@ import android.view.MenuInflater;
  *
  */
 
-public class AboutActivity extends DashboardActivity 
+public class AboutActivity extends Activity
 {
 	//create action bar menu
 	public boolean onCreateOptionsMenu(Menu menu)
@@ -54,7 +55,6 @@ protected void onCreate(Bundle savedInstanceState)
     super.onCreate(savedInstanceState);
 
     setContentView (R.layout.activity_about);
-    setTitleFromActivityLabel (R.id.title_text);
 }
     
 } // end class

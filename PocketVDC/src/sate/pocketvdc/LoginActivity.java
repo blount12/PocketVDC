@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -27,7 +28,7 @@ import android.widget.Toast;
  * 
  */
 
-public class LoginActivity extends DashboardActivity {
+public class LoginActivity extends Activity {
 	// getting regions from strings file
 	private String[] regions;
 	private Spinner gridSpinner;
@@ -71,7 +72,6 @@ public class LoginActivity extends DashboardActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
-		setTitleFromActivityLabel(R.id.title_text);
 
 		userText = (EditText) findViewById(R.id.nameTextBox);
 		passText = (EditText) findViewById(R.id.passwordTextBox);
