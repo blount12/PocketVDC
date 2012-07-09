@@ -36,22 +36,22 @@ public class Joystick extends View
     }
     
     // getters for the joystick position
-    public boolean goingForward()
+    public boolean isUp()
     {
     	return forward;
     }
     
-    public boolean goingBack()
+    public boolean isDown()
     {
     	return back;
     }
     
-    public boolean goingLeft()
+    public boolean isLeft()
     {
     	return left;
     }
     
-    public boolean goingRight()
+    public boolean isRight()
     {
     	return right;
     }
