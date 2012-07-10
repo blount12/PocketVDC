@@ -408,7 +408,7 @@ public class PocketVDCActivity extends Activity
 		final ActivityManager activityManager = (ActivityManager) this
 				.getSystemService(Context.ACTIVITY_SERVICE);
 		final ConfigurationInfo configurationInfo = activityManager.getDeviceConfigurationInfo();
-		final boolean supportsEs2 = configurationInfo.reqGlEsVersion >= 0x20000;
+		final boolean supportsEs2 = true; //configurationInfo.reqGlEsVersion >= 0x20000;
 		if (supportsEs2)
 		{
 			// Request an OpenGL ES 2.0 compatible context
