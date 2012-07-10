@@ -1,5 +1,7 @@
 package sate.pocketvdc;
 
+import sate.pocketvdc.R;
+
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
@@ -29,11 +31,14 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class PocketVDCActivity extends Activity
 {
@@ -63,6 +68,9 @@ public class PocketVDCActivity extends Activity
 	ListView contextMenu;
 	ImageView myImage;
 	TextView heightText, widthText, densityText;
+	EditText chatBox;
+	Button enterText;
+	ToggleButton chatButton;
 
 	final int TELEPORT_DIALOG = 0;
 	final int BACK_DIALOG = 1;
@@ -141,7 +149,7 @@ public class PocketVDCActivity extends Activity
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.action_bar_menu, menu);
+		inflater.inflate(R.menu.main_world_menu, menu);
 		return true;
 	}
 
@@ -157,7 +165,7 @@ public class PocketVDCActivity extends Activity
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
-		final ListView contextMenu = (ListView) findViewById(R.id.listView1);
+		final ListView contextMenu = (ListView) findViewById(R.id.menu);
 		
 		
 		// Handle item selection
@@ -398,9 +406,51 @@ public class PocketVDCActivity extends Activity
 
 		// image view! changed on Tuesday July 3rd.
 		myImage = (ImageView) findViewById(R.id.select);
-		contextMenu = (ListView) findViewById(R.id.listView1);
+		contextMenu = (ListView) findViewById(R.id.menu);
+		chatBox = (EditText) findViewById(R.id.chatBox);
+		enterText = (Button) findViewById(R.id.enterButton);
+		chatButton = (ToggleButton) findViewById(R.id.chatButton);
 		mGLSurfaceView = (GLSurfaceView) findViewById(R.id.gl_surface_view);
 		
+		chatButton.setOnClickListener(new View.OnClickListener()
+		{
+			
+			@Override
+			public void onClick(View v)
+			{
+				if(chatBox.getVisibility() == View.INVISIBLE)
+				{
+					chatBox.setVisibility(View.VISIBLE);
+					enterText.setVisibility(View.VISIBLE);
+				}
+				else
+				{
+					chatBox.setVisibility(View.INVISIBLE);
+					enterText.setVisibility(View.INVISIBLE);
+				}
+				
+			}
+		});
+		
+		enterText.setOnClickListener(new View.OnClickListener()
+		{
+			
+			@Override
+			public void onClick(View v)
+			{
+				if(chatBox.getText() != null)
+				{
+					//eventually this will be the code to actually send the message
+					Toast.makeText(getApplicationContext(), chatBox.getText(), Toast.LENGTH_SHORT).show();
+					chatBox.setText(null);
+				}
+				else
+				{
+					Toast.makeText(getApplicationContext(), "Please enter some text.", Toast.LENGTH_SHORT).show();
+				}
+				
+			}
+		});
 		//getting settings from Shared Preferences
 
 		settings = PreferenceManager.getDefaultSharedPreferences(this);
@@ -636,7 +686,7 @@ public class PocketVDCActivity extends Activity
 		// onResume().
 		super.onResume();
 		this.mGLSurfaceView.onResume();
-		contextMenu = (ListView) findViewById(R.id.listView1);
+		contextMenu = (ListView) findViewById(R.id.menu);
 
 	}
 

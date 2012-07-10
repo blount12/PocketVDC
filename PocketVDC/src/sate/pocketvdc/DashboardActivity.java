@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +35,14 @@ public abstract class DashboardActivity extends Activity
 	 * 
 	 */
 
+	// create action bar menu
+		public boolean onCreateOptionsMenu(Menu menu)
+		{
+			MenuInflater inflater = getMenuInflater();
+			inflater.inflate(R.menu.home_screen_menu, menu);
+			return true;
+		}
+		
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
@@ -142,34 +152,6 @@ public abstract class DashboardActivity extends Activity
 	 * @return void
 	 */
 
-	public void onClickSearch(View v)
-	{
-		//startActivity(new Intent(getApplicationContext(),
-		//		SearchActivity.class));
-	}
-
-	/**
-	 * Handle the click on the About button.
-	 * 
-	 * @param v
-	 *            View
-	 * @return void
-	 */
-
-	public void onClickAbout(View v)
-	{
-		startActivity(new Intent(getApplicationContext(),
-				AboutActivity.class));
-	}
-
-	/**
-	 * Handle the click of a Feature button.
-	 * 
-	 * @param v
-	 *            View
-	 * @return void
-	 */
-
 	public void onClickFeature(View v)
 	{
 		int id = v.getId();
@@ -182,14 +164,6 @@ public abstract class DashboardActivity extends Activity
 		case R.id.home_btn_feature2:
 			startActivity(new Intent(getApplicationContext(),
 					ManageGridActivity.class));
-			break;
-		case R.id.home_btn_feature3:
-			this.finish();
-			break;
-		case R.id.home_btn_feature4:
-			startActivity(new Intent(getApplicationContext(),
-					PrefsActivity.class));
-
 			break;
 		default:
 			break;
